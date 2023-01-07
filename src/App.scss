@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap'); 
+
+.formContainer {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    background-color: violet;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+
+    .formWrapper {
+        display: flex;
+        color: black;
+        width: 45vh;
+        flex-direction: column;
+        background-color: white;
+        padding: 5vh;
+        text-align: center;
+        border-radius: 8px;
+
+        .logo {
+            font-size: x-large;
+            font-weight: 600;
+        }
+
+        .title {
+            font-size: small;
+        }
+
+        form {
+            display: flex;
+            gap: 2.5vh;
+            flex-direction: column;
+
+            .input {
+                border: none;
+                border-bottom: 1.2px solid lightgray;
+                padding: 1.5vh;
+                outline: none;
+                transition: 0.3s;
+            }
+
+            .input:focus {
+                border-radius: 2px;
+                border-bottom: 2.5px solid violet;
+            }
+
+            button {
+                padding: 2vh;
+                color: white;
+                background-color: violet;
+                border: none;
+                font-weight: 600;
+                cursor: pointer;
+                color: white;
+                border-radius: 1vh;
+                transition: 0.7s ease-in-out;
+            }
+
+            button:hover {
+                box-shadow: 3px 3px 10px violet;
+                color: violet;
+                background-color: white;
+                border: 2px solid violet;
+            }
+
+            label {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2vh;
+
+                .GrFormUpload {
+                    width: 3vh;
+                    height: 3vh;
+                    margin-right: 2px;
+                }
+            }
+        }
+
+        p {
+            font-size: 2vh;
+            margin-top: 1.5vh;
+
+            .Link {
+                text-decoration: none;
+                color: violet;
+                margin-left: 1vh;
+                transition: 0.3s;
+            }
+
+            .Link:hover {
+                text-decoration: underline;
+                font-size: medium;
+            }
+        }
+
+    }
+
+
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #9d4edd;
+
+    .container {
+        background-color: white;
+        height: 80vh;
+        width: 70%;
+        border-radius: 1vh;
+        display: flex;
+        overflow: hidden;
+        box-shadow: 3px 3px 10px #5a189a;
+
+        .sidebar {
+            background-color: #7b2cbf;
+            flex: 1;
+
+            .navbar {
+                background-color: #5a189a;
+                display: flex;
+                color: white;
+                justify-content: space-between;
+                align-items: center;
+                font-family: "poppins";
+                padding: 3vh;
+                height: 3vh;
+
+                .title {
+                    font-size: larger;
+                    font-weight: 600;
+                    color: #c77dff;
+                }
+
+                div {
+                    align-items: center;
+                    gap: 0.8vh;
+                    display: flex;
+
+                    button {
+                        border: none;
+                        font-family: 'poppins';
+                        padding: 6px;
+                        color: whitesmoke;
+                        font-weight: 550;
+                        border-radius: 1vh;
+                        cursor: pointer;
+                        transition: 0.8s;
+                        background-color: #9d4edd;
+                    }
+
+                    button:hover {
+                        box-shadow: 1px 1px 10px #3c096c;
+                        background-color: white;
+                        color: #9d4edd;
+                        border: 2px solid #9d4edd;
+                    }
+                }
+
+            }
+
+            .search {
+
+                .searchform {
+                    border-bottom: #240046;
+                    display: flex;
+                    justify-content: center;
+
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        border-bottom: 2px solid;
+                        padding: 10px;
+                        width: 40vh;
+                        margin: auto;
+                        font-size: 2.2vh;
+                        color: lightgray;
+                    }
+
+                    ::placeholder {
+                        color: lightgray;
+                    }
+                }
+                .allchats{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 1vh;
+                    
+                    .chat {
+                    display: flex;
+                    color: white;
+                    padding: 2vh;
+                    padding-top: 1vh;
+                    padding-bottom: 1vh;
+                    gap: 2vh;
+                    transition: 0.7s;
+                    font-family: 'poppins';
+                    cursor: pointer;
+                    img{
+                        border-radius: 50%;
+                    }
+                .title{
+                    font-size: 2.5vh;
+                }
+                .desc{
+                    font-size: 2vh;
+                    color: whitesmoke;
+                }
+            }
+            .chat:hover{
+                background-color: #5a189a;
+            }
+            }
+            }
+        }
+
+        .chatInfo {
+            flex: 2;
+            background-color: #7b2cbf;
+                display: flex;
+                color: white;
+                justify-content: space-between;
+                align-items: center;
+                font-family: "poppins";
+                padding: 3vh;
+                height: 3vh;
+
+                .userinfo{
+                    display: flex;
+                    gap: 2vh;
+                    img{
+                        border-radius: 50%;
+                    }
+                    span{
+                        font-size:2.5vh;
+                        font-weight: 500;
+
+                    }
+                }
+        }
+    }
+}
