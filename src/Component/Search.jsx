@@ -9,21 +9,21 @@ const Search = () => {
         <input type="text" placeholder='Find a user' />
       </div>
       <div className='allchats'>
-        <div className="chat">
+        <div className="chats">
           <img src={Avatar} width={"45vh"} height={"45vh"} alt="avatar" />
           <div>
             <h8 className="title">Pragati Hadbe</h8>
             <div className='desc'>heyy vedant</div>
           </div>
         </div>
-        <div className="chat">
+        <div className="chats">
           <img src={Avatar} width={"45vh"} height={"45vh"} alt="avatar" />
           <div>
             <h8 className="title">Pragati Hadbe</h8>
             <div className='desc'>heyy vedant</div>
           </div>
         </div>
-        <div className="chat">
+        <div className="chats">
           <img src={Avatar} width={"45vh"} height={"45vh"} alt="avatar" />
           <div>
             <h8 className="title">Pragati Hadbe</h8>

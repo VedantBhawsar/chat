@@ -1,8 +1,16 @@
 import React from 'react'
+import Massage from './Massage'
 
 const Massages = () => {
   return (
-    <div>Massages</div>
+    <div className='massages'>
+      <Massage />
+      <Massage />
+      <Massage />
+      <Massage />
+      <Massage />
+      <Massage />
+    </div>
   )
 }
 

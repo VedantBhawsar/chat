@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 .formContainer {
     display: flex;
@@ -187,44 +187,52 @@
                         color: lightgray;
                     }
                 }
-                .allchats{
+
+                .allchats {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     margin: auto;
                     margin-top: 1vh;
-                    
-                    .chat {
-                    display: flex;
-                    color: white;
-                    padding: 2vh;
-                    padding-top: 1vh;
-                    padding-bottom: 1vh;
-                    gap: 2vh;
-                    transition: 0.7s;
-                    font-family: 'poppins';
-                    cursor: pointer;
-                    img{
-                        border-radius: 50%;
+
+                    .chats {
+                        display: flex;
+                        color: white;
+                        padding: 2vh;
+                        padding-top: 1vh;
+                        padding-bottom: 1vh;
+                        gap: 2vh;
+                        transition: 0.7s;
+                        font-family: 'poppins';
+                        cursor: pointer;
+
+                        img {
+                            border-radius: 50%;
+                        }
+
+                        .title {
+                            font-size: 2.5vh;
+                        }
+
+                        .desc {
+                            font-size: 2vh;
+                            color: whitesmoke;
+                        }
                     }
-                .title{
-                    font-size: 2.5vh;
+
+                    .chats:hover {
+                        background-color: #5a189a;
+                    }
                 }
-                .desc{
-                    font-size: 2vh;
-                    color: whitesmoke;
-                }
-            }
-            .chat:hover{
-                background-color: #5a189a;
-            }
-            }
             }
         }
 
-        .chatInfo {
+        .chat {
             flex: 2;
-            background-color: #7b2cbf;
+            background-color: #3c096c;
+
+            .chatInfo {
+                background-color: #7b2cbf;
                 display: flex;
                 color: white;
                 justify-content: space-between;
@@ -233,18 +241,75 @@
                 padding: 3vh;
                 height: 3vh;
 
-                .userinfo{
+                .userinfo {
                     display: flex;
                     gap: 2vh;
-                    img{
+
+                    img {
                         border-radius: 50%;
                     }
-                    span{
-                        font-size:2.5vh;
+
+                    span {
+                        font-size: 2.5vh;
                         font-weight: 500;
 
                     }
                 }
+            }
+            .massages{
+                background-color: #ddddf7;
+                padding: 10px;
+                // height: calc(100% - 160px);
+                height: calc(60vh + 1.3vh) ;
+            }
+            .input{
+                background-color: white;
+                padding: 2vh;
+                height: 3vh;
+                display: flex;
+                align-items: center;
+                justify-content:space-between;
+
+                input{
+                    border:none;
+                    width: 100%;
+                    outline: none;
+                    padding: 10px;
+                    color: #2f2d52;
+                    font-size: 2vh;
+                    &::placeholder{
+                        color:lightgray;
+                    }
+                }
+                .send{
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    img{
+                        height: 24px;
+                        cursor: pointer;
+                    }
+
+                    button{
+                        border:none;
+                        padding: 10px 15px;
+                        color:white;
+                        font-weight: 500;
+                        transition: 0.4s;
+                        background-color: #8da4f1;
+                        border-radius:0.8vh;
+                    &:hover{
+                        cursor: pointer;
+                    //     color: #8da4f1;
+                    //     background-color: white;
+                    //     border: 2px solid #8da4f1;
+                    //     box-shadow: 1px 1px 12px #8da4f1;
+                        }
+                    }
+                    
+                }
+            }
         }
     }
 }

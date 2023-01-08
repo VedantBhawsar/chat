@@ -2,7 +2,14 @@ import React from 'react'
 
 const Massage = () => {
     return (
-        <div>Massage</div>
+        <div className='massage'>
+            <div className='massageinfo'>
+                <img src="" alt="" />
+            </div>
+            <div className='massageContaint'>
+
+            </div>
+        </div>
     )
 }
 
