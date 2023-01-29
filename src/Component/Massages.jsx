@@ -10,6 +10,11 @@ const Massages = () => {
       <Massage />
       <Massage />
       <Massage />
+      <Massage />
+      <Massage />
+      <Massage />
+      <Massage />
+      <Massage />
     </div>
   )
 }
