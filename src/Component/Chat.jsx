@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ChatContext } from '../Context/ChatContext'
 import Avatar from '../img/Avatar.jpg'
 import Input from './Input'
 import Massages from './Massages'
 const Chat = () => {
+    const { data } = useContext(ChatContext);
+
     return (
         <div className='chat'>
             <div className='chatInfo'>
                 <div className='userinfo'>
-                    <img src={Avatar} width={"45vh"} height={"45vh"} alt="" />
+                    <img src={data.user?.photoURL} width={"45vh"} height={"45vh"} alt="" />
+                    <span></span>
                     <div>
-                        <span>Buddy</span>
+                        <span>{data.user?.displayName}</span>
                         <div className='status'>Online</div>
                     </div>
                 </div>

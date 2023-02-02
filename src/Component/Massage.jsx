@@ -1,25 +1,37 @@
-import React from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
+import { AuthContext } from '../Context/AuthContext';
+import { ChatContext } from '../Context/ChatContext';
 import Avatar from '../img/Avatar.jpg'
 
-const Massage = () => {
+const Massage = ({ message }) => {
+    const { currentUser } = useContext(AuthContext);
+    const { data } = useContext(ChatContext);
+    const ref = useRef();
+    console.log(message)
+    useEffect(() => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    }, [message]);
+
+
     return (
         <div
-            // ref={ref}
-            className={`message owner `}
+            ref={ref}
+            className={`message ${message.senderId === currentUser.uid && "owner"}`}
         >
             <div className="messageInfo">
                 <img
                     src={
-                        Avatar
+                        message.senderId === currentUser.uid
+                            ? currentUser.photoURL
+                            : data.user.photoURL
                     }
                     alt=""
                 />
                 <span>just now</span>
             </div>
             <div className="messageContent">
-                <p>Love You</p>
-                <img src={Avatar} alt="" />
-                {/* {message.img && <img src={message.img} alt="" />} */}
+                <p>{message.text}</p>
+                {message.img && <img src={message.img} alt="" />}
             </div>
         </div>
     )

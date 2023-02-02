@@ -1,10 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
 import Chat from './Chat'
 import "../App.scss"
 import SideBar from './SideBar'
+import { AuthContext } from '../Context/AuthContext'
 
 const Home = () => {
+    const { currentUser, setCurrentUser } = useContext(AuthContext)
+    console.log(currentUser)
     return (
         <div className='home'>
             <div className="container">

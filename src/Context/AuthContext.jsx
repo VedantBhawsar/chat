@@ -1,21 +1,39 @@
-import { onAuthStateChanged } from "firebase/auth";
+import { async } from "@firebase/util";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import { auth } from "../firebase";
+import { useNavigate } from "react-router";
+import { auth } from '../firebase'
 
 export const AuthContext = createContext()
 
-export const AuthContextProvidor = ({ children }) => {
-    const [CurrentUser, setCurrentUser] = useState({})
-    useEffect(() => {
-        const useSub = onAuthStateChanged(auth, (user) => {
-            setCurrentUser(user)
-            console.log(user)
-        })
+const AuthContextProvidor = ({ children }) => {
+    const [currentUser, setCurrentUser] = useState(null);
+    // const navigate = useNavigate()
+
+    useEffect(async () => {
+        const password = localStorage.getItem('password')
+        const email = localStorage.getItem('email')
+        if (email && password) {
+            try {
+                await signInWithEmailAndPassword(auth, email, password).then(
+                    (res) => {
+                        setCurrentUser(res.user)
+                        console.log("sucsses")
+                    }
+                )
+                // navigate("/")
+            } catch (err) {
+                console.log(err)
+            }
+        }
     }, [])
+
+
     return (
-        <AuthContext.Provider value={{ CurrentUser }}>
+        <AuthContext.Provider value={{ currentUser, setCurrentUser }}>
             {children}
         </AuthContext.Provider >
-
     )
 }
+
+export default AuthContextProvidor

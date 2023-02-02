@@ -126,7 +126,7 @@
                 flex-direction: column;
                 justify-content: center;
                 margin: auto;
-                margin-top: 1vh;
+                margin-top: 1em;
 
                 .chats {
                     display: flex;
@@ -140,23 +140,26 @@
                     cursor: pointer;
 
                     img {
+                        height: 3.5em;
+                        width: 3.5em;
                         border-radius: 50%;
                     }
 
                     .info {
                         display: flex;
                         flex-direction: column;
-                        gap: .2vh;
-
+                        letter-spacing: 0px;
                         .title {
                             font-size: 2.5vh;
+                            font-weight: 500;
                         }
 
                         .desc {
                             font-size: 1.6vh;
-                            // color:  #B6B6B4;
-                            color: white;
-                            font-weight: 300;
+                            color:  #cbcbcb;
+                            // color: white;
+                            margin: 0;
+                            font-weight: 400;
                         }
                     }
                 }
@@ -186,6 +189,12 @@
                     align-items: center;
                     gap: 0.8vh;
                     display: flex;
+
+                    img{
+                        height: 3em;
+                        width: 3em;
+                        border-radius: 100%;
+                    }
 
                     button {
                         border: none;
@@ -233,14 +242,21 @@
                     }
                 }
 
-                .allchats {
+                .userChat {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
+                    // flex-direction: column;
+                    justify-content: start;
                     margin: auto;
                     margin-top: 1vh;
+                    align-items: center;
+                    margin: 20px;
 
-                    .chats {
+                    img {
+                            border-radius: 50%;
+                            width: 3em;
+                        }
+
+                    .userChatInfo {
                         display: flex;
                         color: white;
                         padding: 2vh;
@@ -250,10 +266,6 @@
                         transition: 0.7s;
                         font-family: 'poppins';
                         cursor: pointer;
-
-                        img {
-                            border-radius: 50%;
-                        }
 
                         .title {
                             font-size: 2.5vh;
@@ -266,7 +278,7 @@
                         }
                     }
 
-                    .chats:hover {
+                    .userChat:hover {
                         background-color: #5a189a;
                     }
                 }
@@ -289,7 +301,7 @@
 
                 .userinfo {
                     display: flex;
-                    gap: 1.7vh;
+                    gap: 0.7vw;
                     align-items: center;
 
                     img {
@@ -346,6 +358,7 @@
                             padding: 10px 20px;
                             border-radius: 0px 10px 10px 10px;
                             max-width: max-content;
+                            margin: 0;
                         }
 
                         img {

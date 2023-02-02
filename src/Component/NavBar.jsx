@@ -1,17 +1,21 @@
-import React from 'react'
-import { RxAvatar } from 'react-icons/rx'
+import React, { useContext } from 'react'
+import { Navigate, useNavigate } from 'react-router';
+import { AuthContext } from "../Context/AuthContext";
 
 const NavBar = () => {
-    const handleClick = (e) => {
-        e.preventDefault()
-        console.log("Hello")
+    const { currentUser, setCurrentUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        setCurrentUser('null')
+        localStorage.clear()
+        navigate("/login")
     }
     return (
         <div className='navbar'>
             <div className='title'>Noob Chat</div>
             <div>
-                <RxAvatar />
-                <div>Vedant</div>
+                <span>{currentUser.displayName}</span>
                 <button onClick={handleClick}>Logout</button>
             </div>
         </div>
