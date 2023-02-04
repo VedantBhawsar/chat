@@ -140,7 +140,7 @@
         box-shadow: 3px 3px 10px #5a189a;
         @include mobile{
             width: 100vw;
-            height: 90%;
+            height: 100%;
         }
         
         .sidebar {
@@ -335,6 +335,7 @@
                     padding-left: 2vh;
                     justify-content: flex-start;
                     gap: 3.5vw;
+                    height: 2vh;
                 }
 
                 img{
