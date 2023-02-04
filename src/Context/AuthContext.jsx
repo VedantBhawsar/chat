@@ -8,6 +8,13 @@ export const AuthContext = createContext()
 
 const AuthContextProvidor = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
+    const [DeviceInfo, setDeviceInfo] = useState(null)
+    useEffect(() => {
+        const dev = navigator.platform
+        setDeviceInfo(dev)
+        console.log(dev)
+    }, [])
+
     // const navigate = useNavigate()
 
     useEffect(async () => {
@@ -30,7 +37,7 @@ const AuthContextProvidor = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ currentUser, setCurrentUser }}>
+        <AuthContext.Provider value={{ currentUser, DeviceInfo, setCurrentUser }}>
             {children}
         </AuthContext.Provider >
     )

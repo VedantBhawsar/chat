@@ -4,9 +4,12 @@ import Home from './Component/Home';
 import Register from './Component/Register';
 import { AuthContext } from './Context/AuthContext';
 import { useContext } from 'react';
+import MSideBar from './Component/Mobile/MSideBar';
+import MChat from './Component/Mobile/MChat';
+import MChats from './Component/Mobile/MChats';
 
 function App() {
-  const { currentUser } = useContext(AuthContext)
+  const { currentUser, DeviceInfo } = useContext(AuthContext)
 
   const ProtectedRoute = ({ children }) => {
     if (currentUser) {
@@ -22,10 +25,13 @@ function App() {
         <Routes>
           <Route exact path="/"
             element={<ProtectedRoute>
-              <Home />
+              {DeviceInfo === "Win32" ?
+                <Home /> : <MSideBar />
+              }
             </ProtectedRoute>}
           />
           <Route exact path='/login' element={<Login />} />
+          <Route exact path='/chat' element={<MChat />} />
           <Route exact path='/register' element={<Register />} />
         </Routes>
       </Router>

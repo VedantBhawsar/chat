@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
+import { AuthContext } from '../Context/AuthContext'
 import { ChatContext } from '../Context/ChatContext'
 import Avatar from '../img/Avatar.jpg'
 import Input from './Input'
 import Massages from './Massages'
 const Chat = () => {
     const { data } = useContext(ChatContext);
-
+    const { DeviceInfo } = useContext(AuthContext)
     return (
         <div className='chat'>
             <div className='chatInfo'>
