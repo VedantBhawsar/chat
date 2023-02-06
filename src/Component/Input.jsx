@@ -15,7 +15,7 @@ import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 const Input = () => {
-    const [text, setText] = useState("");
+    const [text, setText] = useState(null);
     const [img, setImg] = useState(null);
 
     const { currentUser } = useContext(AuthContext);
@@ -27,7 +27,6 @@ const Input = () => {
     };
 
     const handleSend = async () => {
-
         if (img) {
             const storageRef = ref(storage, uuid());
 
@@ -51,7 +50,7 @@ const Input = () => {
                     });
                 }
             );
-        } else {
+        } else if (text) {
             await updateDoc(doc(db, "chats", data.chatId), {
                 messages: arrayUnion({
                     id: uuid(),
