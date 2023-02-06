@@ -13,6 +13,7 @@ import {
 import { db } from "../firebase";
 import { AuthContext } from "../Context/AuthContext";
 import Avatar from '../img/Avatar.jpg'
+import { BiSearch } from 'react-icons/bi'
 
 const Search = () => {
   const [username, setUsername] = useState("");
@@ -38,7 +39,7 @@ const Search = () => {
   };
 
   const handleKey = (e) => {
-    e.code === "Enter" || "Next" && handleSearch();
+    e.code === "Enter" && handleSearch();
   };
 
   const handleSelect = async () => {
@@ -88,6 +89,11 @@ const Search = () => {
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
+        <div className="searchicon" onClick={() => {
+          handleSearch()
+        }}>
+          <BiSearch />
+        </div>
       </div>
       {err && <span>User not found!</span>}
       {user && (

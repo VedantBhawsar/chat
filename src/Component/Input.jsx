@@ -20,7 +20,12 @@ const Input = () => {
 
     const { currentUser } = useContext(AuthContext);
     const { data } = useContext(ChatContext);
-    
+
+    const handleKey = (e) => {
+        e.code === "Enter" && handleSend();
+        e.code === "Next" && handleSend();
+    };
+
     const handleSend = async () => {
 
         if (img) {
@@ -77,7 +82,9 @@ const Input = () => {
     return (
         <div className='input'>
             <input type="text" placeholder='Type Something...' onChange={(e) => setText(e.target.value)}
-                value={text} />
+                value={text}
+                onKeyDown={handleKey}
+            />
             <div className="send">
                 <img src={Attach} style={{ color: " black" }} alt="attach" />
                 <input style={{ display: "none" }}
