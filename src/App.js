@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route exact path="/"
             element={<ProtectedRoute>
-              {DeviceInfo === "Wi32" ?
+              {DeviceInfo === "Win32" ?
                 <Home /> : <MSideBar />
               }
             </ProtectedRoute>}
